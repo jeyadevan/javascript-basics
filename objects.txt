@@ -1,0 +1,44 @@
+Object is a collection of key/value pairs and creates a property.
+eg:
+let emp = {};
+let emp = {
+    firstname: "John",
+    lastname: "Doe",
+}
+console.log(emp.firstname, emp.lastname);
+
+can access the property with array square brackets
+console.log(emp['firstname']);
+
+Adding new property:
+
+emp.middlename = "Ban";
+console.log(emp);
+
+Delete property:
+
+delete emp.lastname;
+console.log(emp);
+
+can check the property avaialble in the object,
+
+property in object-
+console.log('middlename' in emp);
+
+if the property is having word with multiple words it should be accessed with square brackets and enclosed with string quote.
+let emp = {
+    'max age': 56,
+    firstname: "John",
+}
+console.log(emp['max age']);
+
+The property and objects can be copied from one object to another object.
+
+let emp = {
+    name: "John",
+    age: 56,
+}
+
+let stu = emp;
+stu.age = 35;
+console.log(stu);

@@ -1,0 +1,40 @@
+Javascript is a programming language that interact with web elemenets. It consist of
+
+    > Ecmascript
+    > DOM
+    > BOM
+
+Ecmascript provides code functionality.
+DOM- Helps to interact with web elemenets.
+BOM- Helps to access browser API to interact with browser.
+
+Earlier javascript engines were built with interpreters.
+Modern JavaScript engines were built in JUST IN TIME compiler which converts into bytecode to improve performance.
+
+javascript files can be loaded externally using script tag.
+    > async
+    > defer
+There two attributes helps browser to understand the way to load the script files.
+
+Async- Load the file asynchronously.
+Defer - Load the script file after html code parsed.
+
+Javascript is a single threaded and can be asynchronous. It is synchronous by nature and can achieve asynchronous using promises and browser apis.
+
+in javscript 
+    -> statement is a term we call for (var a='Hello World');
+    -> Blocks we refer to  code inside curly brackets eg. if(true) { return 'Hello World'; }
+    -> Identifier is the name we choose for variable, parameter, and function.
+    -> single line comments are // comments
+    -> Block comments are /* comments */
+
+Javascript is case sensitive in nature.
+
+Undefined vs undeclared variables:
+The variable is declared but not initialized with a value. It gives undefined.
+var a;
+console.log(a); // Output will be undefined
+
+The variable is not declared. It gives reference error.
+var a;
+console.log(b); // Output will be reference error
