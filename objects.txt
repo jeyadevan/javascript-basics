@@ -9,29 +9,29 @@ console.log(emp.firstname, emp.lastname);
 
 can access the property with array square brackets
 console.log(emp['firstname']);
-
+====================================
 Adding new property:
 
 emp.middlename = "Ban";
 console.log(emp);
-
+====================================
 Delete property:
 
 delete emp.lastname;
 console.log(emp);
-
+====================================
 can check the property avaialble in the object,
 
 property in object-
 console.log('middlename' in emp);
-
+=====================================
 if the property is having word with multiple words it should be accessed with square brackets and enclosed with string quote.
 let emp = {
     'max age': 56,
     firstname: "John",
 }
 console.log(emp['max age']);
-
+=======================================
 The property and objects can be copied from one object to another object.
 
 let emp = {
@@ -42,3 +42,122 @@ let emp = {
 let stu = emp;
 stu.age = 35;
 console.log(stu);
+
+In this example the changes in one object would affect another object. To avoid this,
+Object.create()
+Object.assign();
+{...}
+would create a new instance of the object.
+let emp = {
+    name: "John",
+    age: 56,
+}
+
+let stu = Object.create(emp) or Object.assign({},stu) or {...};
+stu.age = 35;
+console.log(stu);
+=========================================
+Object has four types of properties
+    1. configurable
+    2. enumerable
+    3. writable
+    4. value
+
+    let person = {};
+person.age = 25;
+person.ssn = '012-38-9119';
+
+Object.defineProperty(person, 'ssn', {
+    enumerable: false,
+    configurable: false,
+    writable: false
+});
+==========================================
+for (let prop in person) {
+    console.log(prop);
+}
+
+The for....in use to loop over enumerable object properties.
+hasOwnProperty is used to check whether the object has its own property.
+
+Example:
+================
+var decoration = {
+    color: 'red'
+};
+
+var circle = Object.create(decoration);
+circle.radius = 10;
+for(const prop in circle) {
+    if(circle.hasOwnProperty(prop)) {
+        console.log(prop);
+    }
+}
+===========================================
+To create a constructor function in javascript we use
+function person(firstname,lastname){
+    this.firstname = firstname;
+    this.lastname = lastname;
+    this.callme = function(){
+        console.log(this.firstname);
+    }
+}
+let emp1 = new person('john','Doe');
+
+the same es5 syntax is used in es6 using class
+
+class person{
+    constructor(firstname,lastname){
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+}
+let emp1 = new person('jake','Dan')
+==============================================
+Object.value is use for get values of object properties.
+class person{
+    constructor(firstname,lastname){
+        this.firstname = firstname;
+        this.lastname = lastname;
+    }
+
+}
+let emp1 = new person('jake','Dan');
+console.log(Object.values(emp1))
+
+The Object.values() returns own enumerable properties while the for...in loop iterates properties in the prototype chain.
+Technically, if you use the for...in loop with the Object.hasOwnProperty() method, you will get the same set of values as the Object.values().
+===============================================
+Object.entries() will return key-value pair in [].
+
+var decoration = {
+    color: 'red'
+};
+
+let rador = Object.entries(decoration);
+console.log(rador);
+================================================
+Object.assign()
+syntax: Object.assign(target, ...sources)
+Object assign will copy all enumerable properties from source to target.
+let widget = {
+    color: 'red'
+};
+let clonedWidget = Object.assign({}, widget);
+console.log(clonedWidget);
+===================================================
+Object.is() behaves like ===. mainly for comparision.
+===================================================
+Factory function is a function that returns a new object.
+
+function Person(firstname,lastname) {
+    return {
+        firstname: firstname,
+        lastname: lastname,
+        getfullname: function(){
+            console.log(this.firstname+' '+this.lastname)
+        }
+    }
+}
+let emp1 = new Person('John','Doe');
+console.log(emp1);
