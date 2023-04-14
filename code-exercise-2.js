@@ -13,3 +13,16 @@ res.push(b[b.length - 1 - i]);
 let c=a.length + b.length;
  console.log(res);
  console.log(res.slice(0,c));
+
+
+
+let a1 = [1,2,3,4];
+let b1 = [5,6,7,8];
+let result=[];
+for(let i = 0, l = b1.length-1 ; i < l ; i++, l--){
+result.push(a1[i]);
+result.push(b1[l]);
+result.push(a1[l]);
+result.push(b1[i]);
+}
+console.log(result)
